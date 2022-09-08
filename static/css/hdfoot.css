@@ -1,0 +1,427 @@
+@charset "utf-8";
+body {
+    font-size: 62.5%;
+}
+
+/* for IE/Win */
+html > body {
+    font-size: 12px;
+    font-family: "Arial", "宋体"
+}
+
+/* for everything else */
+/*字体边框等初始化*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    font-family: "宋体", "Microsoft YaHei";
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+p, input, ol, ul, li, select, button {
+    list-style: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* CSS Document */
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix:after {
+    content: ".";
+    height: 0;
+    width: 0;
+    font-size: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+.newrows {
+    width: 762px;
+}
+
+#wrapper {
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    clear: both;
+
+    font-size: 12px;
+
+}
+
+/**头部样式开始**/
+
+.header {
+
+    width: 100%;
+
+    /*background: url(/static/images/header_bg.jpg) repeat-x;*/
+    background-color: #C6E2F6;
+    border-bottom: 4px #006cb7 solid;
+
+}
+
+.header .global-nav {
+
+    width: 996px;
+
+    margin: 0 auto;
+
+}
+
+.global-nav .pull-left {
+
+    float: left;
+
+}
+
+.global-nav .pull-left li, .global-nav .pull-right li {
+
+    float: left;
+
+    height: 30px;
+
+    line-height: 30px;
+
+}
+
+.global-nav .space {
+
+    margin: 0 10px;
+
+    height: 20px;
+
+    line-height: 20px;
+
+}
+
+.global-nav .pull-left a, .global-nav .pull-right a {
+
+    color: #666;
+
+}
+
+.global-nav .pull-right .map img {
+
+    margin: 0 10px;
+
+}
+
+.global-nav .pull-left a:hover {
+
+    color: #006cb7;
+
+}
+
+.global-nav .pull-left .dx {
+
+    cursor: default;
+
+}
+
+.global-nav .pull-left .dx:hover {
+
+    text-decoration: none;
+
+    color: #666;
+
+}
+
+.global-nav .pull-right {
+
+    float: right;
+
+}
+
+.global-nav .pull-right .caret {
+
+    overflow: hidden;
+
+    display: inline-block;
+
+    width: 0;
+
+    _height: 2px;
+
+    vertical-align: top;
+
+    border-top: 4px solid #000;
+
+    border-left: 4px solid transparent;
+
+    border-right: 4px solid transparent;
+
+    _border-left: 4px dashed transparent;
+
+    _border-right: 4px dashed transparent;
+
+    content: "";
+
+    position: relative;
+
+    top: 13px;
+
+    *top: 8px;
+
+    _top: 4px;
+
+}
+
+.global-nav .pull-right .group_toggle {
+
+    position: relative;
+
+    z-index: 9999;
+
+    *padding-top: 6px;
+
+    _padding-top: 10px;
+
+}
+
+.global-nav .pull-right .group_list {
+
+    width: 470px;
+
+    height: auto;
+
+    border: solid 1px #666;
+
+    -webkit-border-radius: 6px;
+
+    -o-border-radius: 6px;
+
+    -moz-border-radius: 6px;
+
+    -ms-border-radius: 6px;
+
+    border-radius: 6px;
+
+    background-color: #fff;
+
+    -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+
+    -o-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+
+    -moz-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+
+    -ms-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+    position: absolute;
+
+    top: 37px;
+
+    right: 0;
+
+    padding-bottom: 10px;
+
+    /*z-index:9999;*/
+
+}
+
+.global-nav .pull-right .group_list .active {
+
+    background: #006cb7;
+
+    color: #fff;
+
+}
+
+.global-nav .pull-right .group_list ul {
+
+    margin-left: 20px;
+
+    margin-right: 20px;
+
+}
+
+.global-nav .pull-right .group_list li {
+
+    margin: 0;
+
+    margin-left: 2%;
+
+    width: 48%;
+
+}
+
+.global-nav .pull-right .group_list .tit {
+
+    display: inline-block;
+
+    width: 100%;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    border-bottom: 3px solid #ebebeb;
+}
+
+.global-nav .group_list .tab-pane {
+
+    _width: 210px;
+
+    padding: 13px 0 0 5px;
+
+    float: left;
+
+}
+
+.global-nav .group_list .tab-ie6 {
+
+    _width: 235px;
+
+    padding-left: 0;
+
+}
+
+.global-nav .tab-pane .tab-show {
+
+    display: block;
+
+}
+
+.global-nav .group_list .tit:hover {
+
+    text-decoration: none;
+
+}
+
+.global-nav .group_list .tab-pane li {
+
+    border: 0;
+
+    float: none;
+
+    text-align: left;
+
+    width: 100%;
+
+}
+
+.header .ff {
+
+    width: 996px;
+
+    margin: 0 auto;
+
+    /*margin-top: 20px;*/
+
+    padding-top: 10px;
+
+    padding-bottom: 10px;
+}
+
+.header .ff .logo {
+
+    float: left;
+
+}
+
+.logo img {
+    width: 300px;
+}
+
+/**头部样式结束**/
+
+/**尾部样式开始**/
+
+.footer {
+
+    width: 100%;
+
+    /*min-height: 100px;*/
+
+    /*background-color: #eeeeee;*/
+
+    padding-bottom: 10px;
+
+    border-top: 4px solid #009933;
+
+}
+
+.footer .Copyright {
+
+    max-width: 996px;
+
+    width: 95%;
+
+    _width: 996px;
+
+    margin: 0 auto;
+
+    border-top: 1px solid #d6d6d6;
+
+    font-size: 100%;
+
+}
+
+.footer .Copyright .p1 {
+
+    padding-top: 10px;
+
+    line-height: 20px;
+
+    margin: 0 auto;
+
+    color: #999;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.footer .Copyright .p1 a:link {
+    color: #999;
+    text-decoration: none;
+}
+
+.footer .Copyright .p1 a:hover {
+    color: #006cb7;
+    text-decoration: underline;
+}
+
+.footer .Copyright .p1 a:visited {
+    color: #999;
+    text-decoration: none;
+}
+
+.footer .Copyright .p1 a:active {
+    color: #999;
+    text-decoration: none;
+}
+
+/**尾部样式结束**/

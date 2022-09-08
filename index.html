@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>房贷计算器2022_房贷计算器最新2022_房贷计算器</title>
+    <meta name="keywords" content="房贷计算器,公积金贷款计算器,商业贷款计算器,组合贷款计算器"/>
+    <meta name="description" content="房贷计算器2022，利用2022最新的房贷利率，计算2022年月供，房贷额度，利息等"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/static/css/hdfoot.css"/>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/app.js"></script>
+</head>
+
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="ff clearfix">
+        <div class="logo"><a href="/"><img src="/static/images/logo.png" alt="房贷计算器2022"/></a></div>
+    </div>
+</div>
+<!--头部结束-->
+
+<div class="zh_all">
+    <div class="container">
+        <p class="title" id="title">公积金贷款计算器</p>
+        <div class="gj_banner">
+            <ul class="gj_banner ul" id="ul">
+                <li id="li1" class="liClass" onclick="select('a')">公积金贷款</li>
+                <li id="li2" onclick="select('b')">商业贷款</li>
+                <li id="li3" style="border:none;" onclick="select('c')">组合贷款</li>
+            </ul>
+        </div>
+        <div id="table1">
+            <ul class="gj_content">
+                <li>
+                    <div class="gj_half_left"><label for="">贷款金额：</label></div>
+                    <div class="gj_half_right"><input type="text" id="gjjdkje" onblur="clearNoNum(this)"
+                                                      onkeyup="clearNoNum(this)" class="text"
+                                                      value="100"><span>万元</span></div>
+                </li>
+                <li>
+                    <div class="gj_half_left"><label>贷款期限：</label></div>
+                    <div class="gj_half_right">
+                        <select name="type" id="gjjdkqx" onchange="gjjchange(this)">
+                            <option value="1">1 年（12期）</option>
+                            <option value="2">2 年（24期）</option>
+                            <option value="3">3 年（36期）</option>
+                            <option value="4">4 年（48期）</option>
+                            <option value="5">5 年（60期）</option>
+                            <option value="10">10 年（120期）</option>
+                            <option value="15">15 年（180期）</option>
+                            <option value="20" selected="selected">20 年（240期）</option>
+                            <option value="25">25 年（300期）</option>
+                            <option value="30">30 年（360期）</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="gj_half_left"><label for="">年利率：</label></div>
+                    <div class="gj_half_right"><input type="text" id="gjjnll" onblur="clearNoNum(this)"
+                                                      onkeyup="clearNoNum(this)" class="text_1"><span>%</span>
+                        <p class="ass"><a onclick="lilvbiao()">贷款利率表</a></p></div>
+                </li>
+                <li>
+                    <input type="button" class="calculate" onclick="submit('gjj')" value="计算"/><input type="button"
+                                                                                                      class="reset"
+                                                                                                      onclick="result('gjj')"
+                                                                                                      value="重置"/>
+                </li>
+            </ul>
+            <div class="tips">温馨提示：</div>
+            <div class="wenxin">计算器的结果仅供参考，不做法律依据，如与实际数额有出入请自行调整。</div>
+        </div>
+
+        <div id="table2" style="display: none;">
+            <ul class="content">
+                <li>
+                    <div class="half_left"><label for="">贷款金额：</label></div>
+                    <div class="half_right"><input type="text" id="sydkje" onblur="clearNoNum(this)"
+                                                   onkeyup="clearNoNum(this)" value="100" class="text"><span>万元</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="half_left"><label>贷款期限：</label></div>
+                    <div class="half_right">
+                        <select name="type" id="sydkqx" onchange="sychange(this)">
+                            <option value="1">1 年（12期）</option>
+                            <option value="2">2 年（24期）</option>
+                            <option value="3">3 年（36期）</option>
+                            <option value="4">4 年（48期）</option>
+                            <option value="5">5 年（60期）</option>
+                            <option value="10">10 年（120期）</option>
+                            <option value="15">15 年（180期）</option>
+                            <option value="20" selected="selected">20 年（240期）</option>
+                            <option value="25">25 年（300期）</option>
+                            <option value="30">30 年（360期）</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="half_left"><label for="">年利率：</label></div>
+                    <div class="half_right">
+                        <select name="type" id="syjzll" onchange="syselect(this)">
+                            <option value="0">最新基准利率</option>
+                            <option value="7">最新基准利率7折</option>
+                            <option value="8">最新基准利率8折</option>
+                            <option value="8.5">最新基准利率8.5折</option>
+                            <option value="9">最新基准利率9折</option>
+                            <option value="1.1">最新基准利率1.1倍</option>
+                            <option value="1.2">最新基准利率1.2倍</option>
+                            <option value="1.3">最新基准利率1.3倍</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="half_left">&nbsp;</div>
+                    <div class="half_right">
+                        <input type="text" id="synll" onblur="(this)" onkeyup="clearNoNum(this)" class="text_1">
+                        <span>%</span>
+                        <p class="ass"><a class="ass_a" onclick="lilvbiao()">贷款利率表</a></p>
+                    </div>
+                </li>
+                <li>
+                    <input type="button" class="calculate" onclick="submit('sy')" value="计算"/><input type="button"
+                                                                                                     class="reset"
+                                                                                                     onclick="result('sy')"
+                                                                                                     value="重置"/>
+                </li>
+            </ul>
+            <div class="tips">温馨提示：</div>
+            <div class="wenxin">计算器的结果仅供参考，不做法律依据，如与实际数额有出入请自行调整。</div>
+        </div>
+
+
+        <div id="table3" style="display: none;">
+            <ul class="content">
+                <li>
+                    <div class="zh_half_left"><label for="">商业贷款金额：</label></div>
+                    <div class="zh_half_right"><input type="text" id="zhsydkje" onblur="clearNoNum(this)"
+                                                      onkeyup="clearNoNum(this)" value="100"
+                                                      class="text"><span>万元</span></div>
+                </li>
+                <li>
+                    <div class="zh_half_left"><label for="">公积金贷款金额：</label></div>
+                    <div class="zh_half_right"><input type="text" id="zhgjjdkje" onblur="clearNoNum(this)"
+                                                      onkeyup="clearNoNum(this)" value="50" class="text"><span>万元</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="zh_half_left"><label>贷款期限：</label></div>
+                    <div class="zh_half_right">
+                        <select name="type" id="zhdkqx" onchange="zhchange(this)">
+                            <option value="1">1 年（12期）</option>
+                            <option value="2">2 年（24期）</option>
+                            <option value="3">3 年（36期）</option>
+                            <option value="4">4 年（48期）</option>
+                            <option value="5">5 年（60期）</option>
+                            <option value="10">10 年（120期）</option>
+                            <option value="15">15 年（180期）</option>
+                            <option value="20" selected="selected">20 年（240期）</option>
+                            <option value="25">25 年（300期）</option>
+                            <option value="30">30 年（360期）</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="zh_half_left"><label>商业贷款年利率：</label></div>
+                    <div class="zh_half_right">
+                        <select name="type" id="zhjzll" onchange="zhselect(this)">
+                            <option value="0">最新基准利率</option>
+                            <option value="7">最新基准利率7折</option>
+                            <option value="8">最新基准利率8折</option>
+                            <option value="8.5">最新基准利率8.5折</option>
+                            <option value="9">最新基准利率9折</option>
+                            <option value="1.1">最新基准利率1.1倍</option>
+                            <option value="1.2">最新基准利率1.2倍</option>
+                            <option value="1.3">最新基准利率1.3倍</option>
+                        </select>&nbsp;&nbsp;&nbsp;
+                    </div>
+                </li>
+                <li>
+                    <div class="zh_half_right" style="margin-left:40%;">
+                        <input type="text" id="zhsynll" onblur="clearNoNum(this)" onkeyup="clearNoNum(this)"
+                               class="text_1">
+                        <span>%</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="zh_half_left"><label for="">公积金贷款年利率：</label></div>
+                    <div class="zh_half_right"><input type="text" id="zhgjjnll" onblur="clearNoNum(this)"
+                                                      onkeyup="clearNoNum(this)" class="text_1"><span>%</span>
+                        <p class="ass"><a onclick="lilvbiao()">贷款利率表</a></p></div>
+                </li>
+                <li>
+                    <input type="button" class="zh_calculate" onclick="zhsubmit()" value="计算"/><input type="button"
+                                                                                                      class="zh_reset"
+                                                                                                      onclick="zhresult()"
+                                                                                                      value="重置"/>
+                </li>
+            </ul>
+            <div class="tips">温馨提示：</div>
+            <div class="wenxin">计算器的结果仅供参考，不做法律依据，如与实际数额有出入请自行调整。</div>
+        </div>
+
+        <div id="jieguo" style="display: none;">
+            <div class="jg_all">
+                <div class="jg_container">
+                    <p class="jg_title">计算结果</p>
+                    <div class="jg_LLL">
+                        <ul class="jg_content right-line">
+                            <li>
+                                <div class="jg_LLL .half_left"><span class="jg_bo">等额本息</span></div>
+                                <div class="jg_LLL .half_right"><span class="jg_bo">每期等额还款</span></div>
+                            </li>
+                            <li class="jg_top_line">
+                                <div class="jg_LLL .half_left">贷款总额：</div>
+                                <div class="jg_LLL .half_right"><span class="red" id="jgbxdkze"></span><span>万元</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jg_LLL .half_left">贷款期限：</div>
+                                <div class="jg_LLL .half_right"><span class="blue" id="jgbxdkqx"></span><span>期</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jg_LLL .half_left">每期还款：</div>
+                                <div class="jg_LLL .half_right"><span class="red" id="jgbxmqhk"></span><span>元</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jg_LLL .half_left">支付利息：</div>
+                                <div class="jg_LLL .half_right"><span class="red" id="jgbxzflx"></span><span>元</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jg_LLL .half_left">还款总额：</div>
+                                <div class="jg_LLL .half_right"><span class="red" id="jgbxhkze"></span><span>元</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="jg_RRR">
+                        <ul class="jg_content">
+                            <li>
+                                <div class="jg_RRR .half_left"><span class="bo">等额本金</span></div>
+                                <div class="jg_half_right"><span class="bo">逐期递减还款</span></div>
+                            </li>
+                            <li class="jg_top_line">
+                                <div class="jg_RRR .half_left">贷款总额：</div>
+                                <div class="jg_half_right"><span class="red" id="jgbjdkze"></span><span>万元</span></div>
+                            </li>
+                            <li>
+                                <div class="jg_RRR .half_left">贷款期限：</div>
+                                <div class="jg_RRR .half_right"><span class="blue" id="jgbjdkqx"></span><span>期</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jg_RRR .half_left">首期还款：</div>
+                                <div class="jg_RRR .half_right"><span class="red" id="jgbjmqhk"></span><span>元</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jg_RRR .half_left">支付利息：</div>
+                                <div class="jg_RRR .half_right"><span class="red" id="jgbjzflx"></span><span>元</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jg_RRR .half_left">还款总额：</div>
+                                <div class="jg_RRR .half_right"><span class="red" id="jgbjhkze"></span><span>元</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <table border="1" cellpadding="0" cellspacing="0" class="result_table" id="addTable">
+                </table>
+            </div>
+        </div>
+
+
+        <div id="lilvbiao" style="display: none;">
+            <p id="ptime" style="fontsize:18px;font-weight:bold;text-align:center;padding-bottom:10px"></p>
+            <table cellpadding="0" cellspacing="0" width="100%" border="1" class="table_cont">
+                <tr>
+                    <th bgcolor="#5bc6ff">贷款方式</th>
+                    <th bgcolor="#5bc6ff">贷款期限</th>
+                    <th bgcolor="#5bc6ff">贷款利率（%）</th>
+                </tr>
+                <tr>
+                    <td align="center">公积金贷款</td>
+                    <td align="center">五年以内（含五年）</td>
+                    <td align="center" id="gjj1"></td>
+                </tr>
+                <tr>
+                    <td align="center">公积金贷款</td>
+                    <td align="center">五年以上</td>
+                    <td align="center" id="gjj2"></td>
+                </tr>
+                <tr>
+                    <td align="center">商业贷款</td>
+                    <td align="center">一年以上（含一年）</td>
+                    <td align="center" id="sy3"></td>
+                </tr>
+                <tr>
+                    <td align="center">商业贷款</td>
+                    <td align="center">一至五年（含五年）</td>
+                    <td align="center" id="sy4"></td>
+                </tr>
+                <tr>
+                    <td align="center">商业贷款</td>
+                    <td align="center">五年以上</td>
+                    <td align="center" id="sy2"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--底部开始-->
+<div class="footer" style="margin-top:0;">
+    <div class="Copyright">
+        <div style="text-align:center">
+            <p class="p1">房贷计算器</p>
+        </div>
+    </div>
+</div>
+<!--底部结束-->
+</body>
+</html>
